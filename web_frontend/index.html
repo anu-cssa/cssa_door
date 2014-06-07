@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="cssadoor">
+  <head>
+    <title>CSSA Door Status</title>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+  </head>
+  
+  <script>
+    url = 'http://cssadoor.herokuapp.com'
+    
+    getState = function() { $.getJSON( url + '/', function( data ) {
+        $( '#doorstate' ).text( data.state );
+      });
+    }
+    
+    getState();
+    
+    window.setInterval(function() { getState(); }, 10000);
+    
+  </script>
+  
+  <style>
+    article {
+      font-family: 'Open Sans', Arial, sans-serif;
+      text-align: center;
+    }
+  </style>
+  
+  <body>
+    <article>
+      <p id="heading">The door is currently</p>
+      <h1 id="doorstate"></h1>
+    </article>
+  </body>
+</html>
