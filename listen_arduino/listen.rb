@@ -34,7 +34,7 @@ while true do
     puts "#{i}/#{state}"
 
     Net::HTTP.get(URI(
-      "http://cssadoor.herokuapp.com/update_state?token=#{secret_token}&state=#{state}"
+      "https://cssadoor.herokuapp.com/update_state?token=#{secret_token}&state=#{state}"
     ))
   end
 end
