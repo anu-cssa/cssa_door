@@ -15,8 +15,17 @@ secret_token = ENV["SECRET_TOKEN"]
 # clear out the port
 sp.gets
 
+last_i = ""
+
 while true do
-  while (i = sp.gets.chomp) do
+  while (i = sp.gets) do
+    break if not i
+    i.chomp!
+
+    # Only run the update code if the state changed
+    break if i == last_i
+    last_i = i
+
     if i == "low"
       state = "open"
     else
