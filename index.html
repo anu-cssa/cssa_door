@@ -3,6 +3,7 @@
   <head>
     <title>CSSA Door Status</title>
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width initial-scale=1.0">
   </head>
   
@@ -25,9 +26,18 @@
       font-family: 'Open Sans', Arial, sans-serif;
       text-align: center;
     }
+    header {
+      text-align: right;
+    }
+    a {
+      color: black;
+    }
   </style>
   
   <body>
+    <header>
+      <a href="./cssa-door-widget.apk"><i class="fa fa-android"></i></a>
+    </header>
     <article>
       <p id="heading">The door is currently</p>
       <h1 id="doorstate"></h1>
